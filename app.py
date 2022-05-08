@@ -10,7 +10,12 @@ lgbm_model = pickle.load(open("models/lgbm_model.pkl", "rb"))
 
 # Load sample of data (X test) where client ids are indexes
 
-inputs = pd.read_csv('data/CustomerDataExamples.csv')
+# inputs = pd.read_csv('data/CustomerDataExamples.csv')
+# inputs.sort_values(by='SK_ID_CURR', inplace=True)
+# inputs.set_index(keys='SK_ID_CURR', inplace=True)
+inputs_group1 = pd.read_csv('data/CustomerData_group1.csv')
+inputs_group2 = pd.read_csv('data/CustomerData_group2.csv')
+inputs = pd.concat([inputs_group1, inputs_group2])
 inputs.sort_values(by='SK_ID_CURR', inplace=True)
 inputs.set_index(keys='SK_ID_CURR', inplace=True)
 
