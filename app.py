@@ -11,8 +11,6 @@ lgbm_model = pickle.load(open("models/lgbm_model.pkl", "rb"))
 # Load sample of data (X test) where client ids are indexes
 
 inputs = pd.read_csv('data/CustomerDataExamples.csv')
-
-# pickle.dump(inputs, open("data/CustomerDataToBePredicted.pkl", "wb"))
 inputs.sort_values(by='SK_ID_CURR', inplace=True)
 inputs.set_index(keys='SK_ID_CURR', inplace=True)
 
