@@ -9,7 +9,7 @@ preprocessor = pickle.load(open("models/preprocessor.pkl", "rb"))
 lgbm_model = pickle.load(open("models/lgbm_model.pkl", "rb"))
 
 # Load sample of data (X test) where client ids are indexes
-inputs = pd.read_csv('data/CustomerDataExamples.csv')
+inputs = pd.read_csv('data/CustomerDataToBePredicted.csv')
 inputs.sort_values(by='SK_ID_CURR', inplace=True)
 inputs.set_index(keys='SK_ID_CURR', inplace=True)
 
